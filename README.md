@@ -47,27 +47,103 @@ By the end of this lab you can:
 
 ---
 
-## 4. Quick Start — launch the target
+## 4. Setup — launch the target (step by step)
 
-### Option A: GitHub Codespaces (easiest)
-1. **Fork** this repository to your own GitHub account.
-2. On your fork: **Code → Codespaces → Create codespace on main**.
-3. In the Codespace terminal:
-   ```bash
-   docker compose up -d
-   ```
-4. When the **Ports** tab shows port **3000**, set its visibility to **Public**
-   and open the forwarded URL. You should see Juice Shop.
+### Where does Juice Shop come from?
+Juice Shop's code is **not** inside this repository. This repo only holds the lab
+(instructions, template, grader) plus a `docker-compose.yml`. That file points at
+the official Juice Shop image on Docker Hub:
 
-### Option B: Docker locally
+```yaml
+image: bkimminich/juice-shop:v17.1.1
+```
+
+When you run `docker compose up -d`, Docker **downloads that image** (the first run
+takes a few minutes) and starts Juice Shop for you on **port 3000**. You never have
+to install Juice Shop by hand — Docker does it. Pick **Path A** (browser, nothing to
+install) or **Path B** (your own computer).
+
+---
+
+### Path A — GitHub Codespaces (easiest, runs in your browser)
+
+**Step 1 — Fork this repo.**
+Open the repo on GitHub, click **Fork** (top right), and create the fork under your
+own account.
+
+**Step 2 — Open a Codespace.**
+On *your fork*, click the green **Code** button → **Codespaces** tab →
+**Create codespace on main**. Wait ~1 minute for it to load (it opens a VS Code
+editor in your browser — Docker is already installed inside it).
+
+**Step 3 — Start Juice Shop.**
+In the Codespace terminal (bottom panel), type:
 ```bash
-git clone https://github.com/<your-username>/cs24l-juice-shop-lab.git
-cd cs24l-juice-shop-lab
 docker compose up -d
 ```
-Then open **http://localhost:3000**.
+Docker pulls the Juice Shop image and starts it. Wait until it prints that the
+container started.
 
-To stop it later: `docker compose down`.
+**Step 4 — Wait for it to boot, then confirm it's up.**
+Give it ~30–60 seconds, then run:
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3000
+```
+`200` means Juice Shop is running.
+
+**Step 5 — Open it in the browser.**
+Click the **Ports** tab (next to the terminal). Find port **3000**, right-click it →
+**Port Visibility → Public**, then click the 🌐 globe/open icon to open the
+forwarded URL. The Juice Shop homepage should appear.
+
+**Step 6 — You're ready.** Go to Section 5 and start testing.
+
+---
+
+### Path B — Docker on your own computer
+
+**Step 1 — Install Docker Desktop.**
+Download and install **Docker Desktop** (docker.com), then **launch it** and wait
+until it says *Docker is running*. Confirm in a terminal:
+```bash
+docker --version
+```
+
+**Step 2 — Get this repo onto your computer.**
+Fork it on GitHub first, then clone *your fork* (replace `<your-username>`):
+```bash
+git clone https://github.com/<your-username>/cs24-lab1.git
+cd cs24-lab1
+```
+
+**Step 3 — Start Juice Shop.**
+```bash
+docker compose up -d
+```
+The first run downloads the image (a few minutes). Later runs are instant.
+
+**Step 4 — Wait, then confirm it's up.**
+Give it ~30–60 seconds, then:
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" http://localhost:3000
+```
+`200` means it's running. (On Windows without `curl`, just open the URL in Step 5.)
+
+**Step 5 — Open it in your browser.**
+Go to **http://localhost:3000** — you should see Juice Shop.
+
+**Step 6 — You're ready.** Go to Section 5 and start testing.
+
+---
+
+### Stopping and restarting the target
+- **Stop it** (when you're done for the day): `docker compose down`
+- **Start it again** next time: `docker compose up -d`
+- **See logs** if something looks wrong: `docker compose logs`
+
+> **Codespaces note:** a Codespace pauses when you close it and resumes where you
+> left off. If Juice Shop isn't responding after you reopen a Codespace, just run
+> `docker compose up -d` again.
 
 ---
 
