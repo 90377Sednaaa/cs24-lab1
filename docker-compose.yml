@@ -1,0 +1,10 @@
+# CS24/L Web Application Testing Lab — OWASP Juice Shop target
+# Launches a single intentionally-vulnerable web app on port 3000.
+# Authorized, local training use only.
+services:
+  juice-shop:
+    image: bkimminich/juice-shop:v17.1.1
+    container_name: cs24l-juice-shop
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
