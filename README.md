@@ -1,5 +1,16 @@
 # CS24/L — Web Application Testing Lab: OWASP Juice Shop
 
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Alteyae/cs24-lab1)
+
+> **Students — how to join this lab:**
+> 1. Click **Fork** (top right) to copy this repo to your own GitHub account.
+> 2. On *your fork*, click the **Open in GitHub Codespaces** badge above (or
+>    **Code → Codespaces → Create codespace on main**).
+> 3. Wait ~1–2 minutes. Juice Shop starts automatically and a preview of it opens
+>    on **port 3000**. If the preview is blank, wait ~30–60s and refresh.
+> 4. Do the lab (Section 5), fill in `findings.csv`, add screenshots, and push.
+>    The auto-grader (Section 8) checks your submission on every push.
+
 **Course:** CS24/L — AI-Driven Ethical Hacking and Penetration Testing
 
 **Coverage:** Weeks 4–5 — Web Application Testing (input fields, injection points,

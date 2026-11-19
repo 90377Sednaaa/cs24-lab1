@@ -23,4 +23,7 @@ jobs:
         run: python -m pip install --quiet pytest
 
       - name: Validate findings submission
-        run: pytest -q
+        # Only the submission grader runs in CI. The environment smoke test
+        # (tests/test_environment.py) needs a running Juice Shop and is for
+        # students/instructor to run locally, not in CI.
+        run: pytest tests/test_findings.py -q
