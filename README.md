@@ -202,20 +202,44 @@ will need them as evidence.
 
 ## 6. What to submit
 
+> ⏰ **Deadline: Friday.** Your Pull Request must be opened by the due time on
+> Friday, and your PR link posted in the LMS. Late PRs are graded per course policy.
+
+### 6.1 Prepare your files
 1. **`findings.csv`** — fill in all four rows (JUICE-001 … JUICE-004). Keep the
    header row exactly as provided. Columns are described in Section 7.
 2. **`screenshots/`** — one image per finding, named `JUICE-001.png` …
-   `JUICE-004.png` (`.png` or `.jpg`).
+   `JUICE-004.png` (`.png` or `.jpg`), each showing the exploit working.
 3. **`attacker_scripts/`** *(optional but encouraged)* — any scripts/payloads you
    used, so your work is reproducible.
-4. **Commit and push** to your fork. The GitHub Action grades your submission
-   automatically (see Section 8). Check the **Actions** tab for your result.
 
+### 6.2 Commit and push to your fork
 ```bash
 git add findings.csv screenshots/ attacker_scripts/
 git commit -m "Submit Juice Shop findings"
 git push
 ```
+The GitHub Action grades your submission automatically (see Section 8). Check the
+**Actions** tab on your fork for the ✅/❌ result, and fix and push again if it fails.
+
+### 6.3 Open a Pull Request (this is your hand-in)
+1. On your fork on GitHub, click **Contribute → Open pull request** (or the
+   **Pull requests** tab → **New pull request**).
+2. Make sure the PR is **from** your fork's `main` **into** the original
+   `Alteyae/cs24-lab1` `main`.
+3. Title your PR exactly: **`Lastname, Firstname — Juice Shop Lab`**
+4. Click **Create pull request**. The auto-grader runs on the PR; make sure it
+   passes (✅) before the deadline.
+
+### 6.4 Post your PR link in the LMS
+Copy your Pull Request's URL (it looks like
+`https://github.com/Alteyae/cs24-lab1/pull/<number>`) and **paste it into the LMS
+submission** for this lab. **Both steps are required**: the PR is your work, the LMS
+link is your official submission record.
+
+> **Checklist before Friday:** `findings.csv` complete · 4 screenshots added ·
+> pushed to your fork · auto-grader ✅ on your PR · PR titled correctly · PR link
+> posted in LMS.
 
 ---
 
