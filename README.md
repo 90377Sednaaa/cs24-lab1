@@ -1,15 +1,18 @@
 # CS24/L — Web Application Testing Lab: OWASP Juice Shop
 
 **Course:** CS24/L — AI-Driven Ethical Hacking and Penetration Testing
+
 **Coverage:** Weeks 4–5 — Web Application Testing (input fields, injection points,
 client-side issues, access control, misconfigurations)
+
 **Course Outcome:** CO1 / CO2 — perform web application security testing and analyze
 vulnerabilities in a controlled, authorized environment.
+
 **Format:** Hands-on, auto-graded via GitHub. You exploit the app, document four
 findings, and push your work for automatic structural grading.
 
 > ⚠️ **Authorized training only.** OWASP Juice Shop is intentionally vulnerable and
-> runs **only on your own machine / Codespace**. Never point these techniques at a
+> please run **only on your own machine / Codespace / Virtual Machine**. Never point these techniques at a
 > system you do not own or lack written permission to test.
 
 ---
