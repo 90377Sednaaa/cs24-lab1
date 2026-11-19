@@ -7,3 +7,6 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Instructor-only (answer key) — never push to the public repo
+INSTRUCTOR.md
